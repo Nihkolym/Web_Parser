@@ -54,7 +54,7 @@ h1{
 h2{
 	font-style: italic;
 }
-footer{
+.footer{
 	height: 50px;
 	color: hsl(0, 0%, 90%);
 	background-color: hsl(0, 0%, 5%);
