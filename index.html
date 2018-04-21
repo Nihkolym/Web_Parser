@@ -6,27 +6,32 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+	<script defer src="./js/list.js" type="text/javascript"></script>
+	<script defer src="./js/up.js" type="text/javascript"></script>
+	<script defer src="./js/currency.js" type="text/javascript"></script>
+	<script defer src="./js/dropContainer.js" type="text/javascript"></script> 
 </head>
 <body>
 	<div class="wrapper container-fluid">
 		<header>
-			<div class="header container container">
+			<div id="header" class="header container p-3">
 				<div class="row">
-					<div class="col-md-3 pl-5">
-						<img class="img-thumbnail" src="logo.png" alt="logo" width="75" height="75">
+					<div class="logo col-md-3 text-center">
+						<i class="fas fa-home" style="font-size: 5em; color: green;"></i>
 					</div>
-					<div class="col-md-9 mt-3">
-						<h1 class="text-center">
+					<div class="title col-md-9 mt-3 text-center">
+						<h1>
 							WWW.WEBPARS.COM
 						</h1>
 					</div>
 				</div>
 			</div>
 		</header>
-		<div id="main">
+		<div id="main" class="container">
 			<section>
-				<div class="searh_block container pt-3 pb-3">
-					<div class="jumbotron jumbotron">
+				<div class="description_block container p-3 pt-5">
+					<div class="jumbotron">
 						<h2>
 							Lorem Ipsulum
 						</h2>
@@ -35,9 +40,13 @@
 							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
 					</div>
-					<form action="">
+				</div>
+			</section>
+			<section>
+				<div class="searh_block container p-3">
+					<form class="form p-4" action="#">
 						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-3">
+							<div class="col-lg-4">
 								<fieldset>								
 									<legend>Personal information:</legend>
 									<label for="">
@@ -45,130 +54,138 @@
 									</label>
 									<br>
 									<input name="building" type="radio" checked>
-									<label class="mr-1" for="">Дом</label>
+									<label class="mr-3" for="">Дом</label>
 									<input name="building" type="radio">
 									<label for="">Квартира</label>
 									<br>
 									<label for="">
 										Выберите операцию:
 									</label>
-									<select class="custom-select mb-2" name="operation" data-style="btn-primary">
-											<option value="buying">Покупка</option>
-											<option value="selling">Продажа</option>
-											<option value="rent">Аренда</option>
-											<option value="delivery">Сдача</option>
+									<select class="custom-select" name="operation" data-style="btn-primary">
+										<option value="selling">Продажа</option>
+										<option value="rent">Аренда</option>
 									</select>
 									<br>
-									<label for="">
-										Выберите населённый пункт
+									<label for="selectArea">
+										Выберите область:
 									</label>
-									<select class="custom-select" name="address" data-style="btn-info" data-live-search="true" defaultval="Вся Украина">    
-											<option>Выберите населённый пункт</option>
-											<optgroup label="Винницкая обл.">
-												<option>Бар</option>
-												<option>Бершадь</option>
-												<option>Винница</option>
-												<option>Гайсин</option>
-												<option>Гнивань</option>
-												<option>Жмерика</option>
-												<option>Ильинцы</option>
-												<option>Казатин</option>
-												<option>Калиновка</option>
-												<option>Крыжополь</option>
-												<option>Ладыжин</option>
-												<option>Липовец</option>
-												<option>Могилев-Подольский</option>
-												<option>Немиров</option>
-												<option>Песочин</option>
-												<option>Погребище</option>
-												<option>Стрижавка</option>
-												<option>Тульчин</option>
-												<option>Хмельник</option>
-												<option>Чечельник</option>
-												<option>Шаргород</option>
-												<option>Ямполь</option>
-											</optgroup>
-											<optgroup label="Волынская обл.">
-												<option>Берестечко</option>
-												<option>Владимир-Волынский</option>
-												<option>Горохов</option>
-												<option>Иваничи</option>
-												<option>Камень-Каширский</option>
-												<option>Киверцы</option>
-												<option>Ковель</option>
-												<option>Луцк</option>
-												<option>Любешов</option>
-												<option>Любомль</option>
-												<option>Маневичи</option>
-												<option>Нововолынск</option>
-												<option>Ратно</option>
-												<option>Рожище</option>
-												<option>Старая Выжевка</option>
-												<option>Турийск</option>
-												<option>Устилуг</option>
-												<option>Цумань</option>
-												<option>Шацк</option>
-											</optgroup>
-											<optgroup label="Днепропетровская обл.">
-												<option>Апостолово</option>
-												<option>Верхнеднепровск</option>
-												<option>Вольногорск</option>
-												<option>Днепр</option>
-												<option>Желтые Воды</option>
-												<option>Каменское</option>
-												<option>Кривой Рог</option>
-												<option>Марганец</option>
-												<option>Никополь</option>
-												<option>Новомосковск</option>
-												<option>Орджоникидзе</option>
-												<option>Павлоград</option>
-												<option>Перещепино</option>
-												<option>Першотравенск</option>
-												<option>Подгородное</option>
-												<option>Пятихатки</option>
-												<option>Синельниково</option>
-												<option>Терновка</option>
-											</optgroup>
-											<optgroup label="Донецкая обл.">
-												<option>Авдеевка</option>
-												<option>Александровка</option>
-												<option>Амвросиевка</option>
-												<option>Артемовск</option>
-												<option>Волноваха</option>
-												<option>Горловка</option>
-												<option>Дебальцево</option>
-												<option>Дзержинск</option>
-												<option>Димитров</option>
-												<option>Доброполье</option>
-												<option>Докучаевск</option>
-												<option>Донецк</option>
-												<option>Дружковка</option>
-												<option>Енакиево</option>
-												<option>Ждановка</option>
-												<option>Зугрэс</option>
-												<option>Кировское</option>
-												<option>Константиновка</option>
-												<option>Краматорск</option>
-												<option>Красноармейск</option>
-												<option>Красный Лиман</option>
-												<option>Майорск</option>
-												<option>Макеевка</option>
-												<option>Мариуполь</option>
-												<option>Марьинка</option>
-												<option>Новоазовск</option>
-												<option>Новогродовка</option>
-												<option>Селидово</option>
-												<option>Славянск</option>
-												<option>Снежное</option>
-												<option>Соледар</option>
-												<option>Старобешево</option>
-												<option>Торез</option>
-												<option>Угледар</option>
-												<option>Харцызск</option>
-												<option>Шахтерск</option>
-												<option>Ясиноватая</option>
-											</optgroup>
-											<optgroup label="Житомирская обл.">
+									<select id="selectArea" class="custom-select" name="area" data-style="btn-info" data-live-search="true" defaultval="Вся Украина">    
+										<option>Винницкая область</option>
+										<option>Волынская область</option>
+										<option>Днепропетровская область</option>
+										<option>Донецкая область</option>
+									</select>
+									<label for="city">
+										Выберите город:
+									</label>
+									<select id="selectCity" class="custom-select" name="city" data-style="btn-info" data-live-search="true" defaultval="Вся Украина"> 
+										<optgroup label="Винницкая область"> 
+											<option>Бар</option>
+											<option>Бершадь</option>
+											<option>Винница</option>
+											<option>Гайсин</option>
+											<option>Гнивань</option>
+											<option>Жмерика</option>
+											<option>Ильинцы</option>
+											<option>Казатин</option>
+											<option>Калиновка</option>
+											<option>Крыжополь</option>
+											<option>Ладыжин</option>
+											<option>Липовец</option>
+											<option>Могилев-Подольский</option>
+											<option>Немиров</option>
+											<option>Песочин</option>
+											<option>Погребище</option>
+											<option>Стрижавка</option>
+											<option>Тульчин</option>
+											<option>Хмельник</option>
+											<option>Чечельник</option>
+											<option>Шаргород</option>
+											<option>Ямполь</option>
+										</optgroup>
+										<optgroup label="Волынская область">
+											<option>Берестечко</option>
+											<option>Владимир-Волынский</option>
+											<option>Горохов</option>
+											<option>Иваничи</option>
+											<option>Камень-Каширский</option>
+											<option>Киверцы</option>
+											<option>Ковель</option>
+											<option>Луцк</option>
+											<option>Любешов</option>
+											<option>Любомль</option>
+											<option>Маневичи</option>
+											<option>Нововолынск</option>
+											<option>Ратно</option>
+											<option>Рожище</option>
+											<option>Старая Выжевка</option>
+											<option>Турийск</option>
+											<option>Устилуг</option>
+											<option>Цумань</option>
+											<option>Шацк</option>
+										</optgroup>
+										<optgroup label="Днепропетровская область">
+											<option>Апостолово</option>
+											<option>Верхнеднепровск</option>
+											<option>Вольногорск</option>
+											<option>Днепр</option>
+											<option>Желтые Воды</option>
+											<option>Каменское</option>
+											<option>Кривой Рог</option>
+											<option>Марганец</option>
+											<option>Никополь</option>
+											<option>Новомосковск</option>
+											<option>Орджоникидзе</option>
+											<option>Павлоград</option>
+											<option>Перещепино</option>
+											<option>Першотравенск</option>
+											<option>Подгородное</option>
+											<option>Пятихатки</option>
+											<option>Синельниково</option>
+											<option>Терновка</option>
+										</optgroup>
+										<optgroup label="Донецкая область">
+											<option>Авдеевка</option>
+											<option>Александровка</option>
+											<option>Амвросиевка</option>
+											<option>Артемовск</option>
+											<option>Волноваха</option>
+											<option>Горловка</option>
+											<option>Дебальцево</option>
+											<option>Дзержинск</option>
+											<option>Димитров</option>
+											<option>Доброполье</option>
+											<option>Докучаевск</option>
+											<option>Донецк</option>
+											<option>Дружковка</option>
+											<option>Енакиево</option>
+											<option>Ждановка</option>
+											<option>Зугрэс</option>
+											<option>Кировское</option>
+											<option>Константиновка</option>
+											<option>Краматорск</option>
+											<option>Красноармейск</option>
+											<option>Красный Лиман</option>
+											<option>Майорск</option>
+											<option>Макеевка</option>
+											<option>Мариуполь</option>
+											<option>Марьинка</option>
+											<option>Новоазовск</option>
+											<option>Новогродовка</option>
+											<option>Селидово</option>
+											<option>Славянск</option>
+											<option>Снежное</option>
+											<option>Соледар</option>
+											<option>Старобешево</option>
+											<option>Торез</option>
+											<option>Угледар</option>
+											<option>Харцызск</option>
+											<option>Шахтерск</option>
+											<option>Ясиноватая</option>
+										</optgroup>
+									</select> 
+											
+											<!-- <optgroup label="Житомирская обл.">
 												<option>Андрушевка</option>
 												<option>Барановка</option>
 												<option>Бердичев</option>
@@ -674,47 +691,109 @@
 												<option>Сторожинец</option>
 												<option>Хотин</option>
 												<option>Черновцы</option>
-											</optgroup>
-									</select>
+											</optgroup> -->
 								</fieldset>
 							</div>
-							<div class="block_picker row col-xs-12 col-sm-12 col-md-9 ml-0">
-								<div class="col-xs-4 col-sm-4 col-md-4">
-									<input class="form-control mb-2" type="text" placeholder="Этаж">
-									<input class="form-control mb-2" type="text" placeholder="Этаж">
-									<input class="form-control mb-2" type="text" placeholder="Этаж">
-									<input class="form-control mb-2" type="text" placeholder="Этаж">
-								</div>
-								<div class="col-xs-4 col-sm-4 col-md-4">
-									<input class="form-control mb-2" type="text" placeholder="Площадь">
-									<input class="form-control mb-2" type="text" placeholder="Площадь">
-								</div>
-								<div class="col-xs-4 col-sm-4 col-md-4">
-									<input class="form-control mb-2" type="text" placeholder="Кол-во комнат">
-									<input class="form-control mb-2" type="text" placeholder="Кол-во комнат">
-								</div>
+							<div class="block_picker col-lg-7 offset-lg-1 p-4 align-self-center">
+								<div class="row ">	
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<input class="form-control mb-3" type="number" placeholder="Этаж" min="1" pattern="^[0-9]">
+										<input class="form-control mb-3" type="number" placeholder="Этаж" min="1" pattern="^[0-9]">
+										<input class="form-control mb-3" type="number" placeholder="Этаж" min="1" pattern="^[0-9]">
+										<input class="form-control mb-3" type="number" placeholder="Этаж" min="1" pattern="^[0-9]">
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<input class="form-control mb-3" type="text" placeholder="Площадь" min="10" pattern="^[0-9]">
+										<input class="form-control mb-3" type="text" placeholder="Площадь" min="10" pattern="^[0-9]">
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<input class="form-control mb-3" type="text" placeholder="Кол-во комнат" min="1" pattern="^[0-9]">
+										<input class="form-control mb-3" type="text" placeholder="Кол-во комнат" min="1" pattern="^[0-9]">
+									</div>
+								</div>	
 							</div>
-							<div class="container text-center mt-4">	
-								<button type="button" class="btn btn-secondary btn-lg">ПОЛУЧИТЬ ДАННЫЕ</button>
-							</div>
+						</div>
+						<div class="container mt-4 p-0 text-center">
+							<div class="currency row justify-content-center">
+								<div>	
+									<i class="fas fa-dollar-sign"></i>
+								</div>
+								<div class=" ml-2 mr-2">	
+									<i class="fas fa-euro-sign"></i>
+								</div>
+								<div>	
+									<i class="fas fa-ruble-sign"></i>
+								</div>
+							</div>	
+							<button id="getData" type="submit" class="btn btn-secondary btn-lg">ПОЛУЧИТЬ ДАННЫЕ
+							<span><i class="fas fa-dollar-sign"></i></span>
+							</button>
 						</div>	
 					</form>
 				</div>
 			</section>
-			<section>	
-				<div class="result_container container">
-					<div class="result_title mb-0">
+			<section id="result">	
+				<div class="container cost p-5">
+					<div class="row">
+						<div class="cost_container col-lg-4 m-auto text-center">
+							<h2>AVERAGE SUM</h2>
+							<p class="h1">$1000,00</p>
+						</div>
+
+						<table class="table col-lg-8 table-striped table-hover">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">URL</th>
+									<th scope="col">COST</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>dsa</td>
+									<td>dsad</td>
+								</tr>
+								<tr>
+									<td>dsa</td>
+									<td>dsad</td>
+								</tr>
+								<tr>
+									<td>dsa</td>
+									<td>dsad</td>
+								</tr>
+								<tr>
+									<td>dsa</td>
+									<td>dsad</td>
+								</tr>
+								<tr>
+									<td>dsa</td>
+									<td>dsad</td>
+								</tr>
+								<tr>
+									<td>dsa</td>
+									<td>dsad</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div id="arrowDrop" class="row justify-content-center mb-2">
+					<i  class="fas fa-arrow-alt-circle-down" style="font-size: 6em"></i>
+				</div>
+
+				<div id="itemsContainer" class="result_container p-5 container">
+					<div class="result_title p-2">
 						<h2 class="text-center">
 							Результат
 						</h2>
 					</div>
-					<div class="items_container container">
+					<div class="items_container container p-4">
 						<section>
-							<div class="item container">
+							<div class="item container p-3 mt-4 mb-4">
 								<h3>Logo</h3>
 								<div class="row">
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img src="logo.png" width="100" height="100" alt="logo">
+										<i class="fas fa-home" style="font-size: 5em; color: green;"></i>
 									</div>
 									<div class="col-xs-9 col-sm-9 col-md-9">
 										<p>
@@ -725,11 +804,11 @@
 							</div>
 						</section>
 						<section>
-							<div class="item container">
+							<div class="item container p-3 mt-4 mb-4">
 								<h3>Logo</h3>
 								<div class="row">
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img src="logo.png" width="100" height="100" alt="logo">
+										<i class="fas fa-home" style="font-size: 5em; color: green;"></i>
 									</div>
 									<div class="col-xs-9 col-sm-9 col-md-9">
 										<p>
@@ -740,11 +819,11 @@
 							</div>
 						</section>
 						<section>
-							<div class="item container">
+							<div class="item container p-3 mt-4 mb-4">
 								<h3>Logo</h3>
 								<div class="row">
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img src="logo.png" width="100" height="100" alt="logo">
+										<i class="fas fa-home" style="font-size: 5em; color: green;"></i>
 									</div>
 									<div class="col-xs-9 col-sm-9 col-md-9">
 										<p>
@@ -755,16 +834,13 @@
 							</div>
 						</section>
 					</div>
-					<div class="container mt-4 text-center">
-						<button class="btn btn-dark btn-lg" type="button">Подробнее
-						</button>
-					</div>
+
 				</div>
 			</section>			
 		</div>
 		<footer>
 			<section>
-				<div class="footer container pt-2">
+				<div class="footer container p-2">
 					<article>
 						<p class="text-center">
 							Copyright © 2018, Your Company Here, All Rights Reserved
@@ -774,6 +850,19 @@
 			</section>
 		</footer>
 	</div>
+
+	<div id="up" class="up text-center pt-3">
+		<i class="fas fa-arrow-up h1"></i>
+	</div>
+
+	<script defer>
+		var result = document.getElementById("result");
+
+		document.getElementById("getData").onclick = function(){
+			result.style.display = "block";
+		}
+	</script>
+
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
