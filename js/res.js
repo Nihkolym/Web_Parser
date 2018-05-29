@@ -52,9 +52,8 @@ document.getElementById('getData').onclick = function (e) {
 	};
 
 	xhr.open("POST", 'путь к php файлу', true);
-	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-	xhr.send(JSON.stringify(obj));
+	xhr.send(obj);
 
 	e.preventDefault();
 }
