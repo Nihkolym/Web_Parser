@@ -56,7 +56,7 @@ optgroup:not([label="Винницкая область"]){
 	background-color: hsl(0, 0%, 5%);	
 }
 .searh_block{
-	/* background-color: hsla(0, 0%, 70%, 0.4); */
+	
 }
 .block_picker{
 	background-color: hsl(0, 0%, 20%); 
