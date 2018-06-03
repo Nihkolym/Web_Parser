@@ -51,7 +51,7 @@
 	width: 30px;
 	height: 105px;
 	position: absolute;
-	background-color: #f14a58;
+	background-color: green;
 }
 
 .slider_btn::before{
