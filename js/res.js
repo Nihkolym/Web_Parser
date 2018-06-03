@@ -24,9 +24,8 @@ document.getElementById('getData').onclick = function (e) {
 
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
-		   let elements = JSON.stringify();
 
-			elements = JSON.parse(xhr.responseText);
+			let	elements = JSON.parse(xhr.responseText);
 
 			let c = 0;
 
@@ -47,6 +46,23 @@ document.getElementById('getData').onclick = function (e) {
 
 			for (let el of descriptions) {
 				el.textContent = elements[c++].description;
+			}
+
+			var averSum = 0;
+			var count = 0;
+			for (let el of elements) {
+				averSum += parseInt(el.price);
+				count++;
+			}
+
+			document.getElementById('averSum').textContent = averSum/count;
+
+			var info = document.getElementById('info');
+
+			for(var i = 0; i < elements.length; i++){
+				var tr = new document.createElement('tr');
+				tr.innerHTML = "<td>"+elements[i].URL +"</td><td>" + elements[i].price + "</td>";
+				info.appendChild(tr);
 			}
 		}
 	};

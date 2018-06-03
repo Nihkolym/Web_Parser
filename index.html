@@ -75,35 +75,14 @@
 										<option>Волынская область</option>
 										<option>Днепропетровская область</option>
 										<option>Донецкая область</option>
+										<option>Житомирская область</option>
+										<option>Закарпатская область</option>
 									</select>
 									<label for="city">
 										Выберите город:
 									</label>
 									<select id="selectCity" class="custom-select" name="city" data-style="btn-info" data-live-search="true" defaultval="Вся Украина"> 
-										<optgroup label="Винницкая область"> 
-											<option>Бар</option>
-											<option>Бершадь</option>
-											<option>Винница</option>
-											<option>Гайсин</option>
-											<option>Гнивань</option>
-											<option>Жмерика</option>
-											<option>Ильинцы</option>
-											<option>Казатин</option>
-											<option>Калиновка</option>
-											<option>Крыжополь</option>
-											<option>Ладыжин</option>
-											<option>Липовец</option>
-											<option>Могилев-Подольский</option>
-											<option>Немиров</option>
-											<option>Песочин</option>
-											<option>Погребище</option>
-											<option>Стрижавка</option>
-											<option>Тульчин</option>
-											<option>Хмельник</option>
-											<option>Чечельник</option>
-											<option>Шаргород</option>
-											<option>Ямполь</option>
-										</optgroup>
+										<optgroup label="Ивано-Франковская обл.">
 										<optgroup label="Волынская область">
 											<option>Берестечко</option>
 											<option>Владимир-Волынский</option>
@@ -184,9 +163,7 @@
 											<option>Шахтерск</option>
 											<option>Ясиноватая</option>
 										</optgroup>
-									</select> 
-											
-											<!-- <optgroup label="Житомирская обл.">
+										<optgroup label="Житомирская область">
 												<option>Андрушевка</option>
 												<option>Барановка</option>
 												<option>Бердичев</option>
@@ -205,49 +182,30 @@
 												<option>Романов</option>
 												<option>Черняхов</option>
 											</optgroup>
-											<optgroup label="Закарпатская обл.">
-												<option>Берегово</option>
-												<option>Буштына</option>
-												<option>Великий Бычков</option>
-												<option>Виноградов</option>
-												<option>Вышково</option>
-												<option>Дубовое</option>
-												<option>Иршава</option>
-												<option>Королево</option>
-												<option>Межгорье</option>
-												<option>Мукачево</option>
-												<option>Перечин</option>
-												<option>Рахов</option>
-												<option>Свалява</option>
-												<option>Солотвина</option>
-												<option>Тячев</option>
-												<option>Ужгород</option>
-												<option>Хуст</option>
-												<option>Чоп</option>
-											</optgroup>
-											<optgroup label="Запорожская обл.">
-												<option>Акимовка</option>
-												<option>Беляевка</option>
-												<option>Бердянск</option>
-												<option>Васильевка</option>
-												<option>Веселое</option>
-												<option>Вольнянск</option>
-												<option>Гуляйполе</option>
-												<option>Днепрорудное</option>
-												<option>Запорожье</option>
-												<option>Каменка-Днепровская</option>
-												<option>Куйбышево</option>
-												<option>Кушугум</option>
-												<option>Мелитополь</option>
-												<option>Михайловка</option>
-												<option>Молочанск</option>
-												<option>Орехов</option>
-												<option>Пологи</option>
-												<option>Приморск</option>
-												<option>Розовка</option>
-												<option>Токмак</option>
-												<option>Энергодар</option>
-											</optgroup>
+										<optgroup label="Закарпатская область">
+											<option>Берегово</option>
+											<option>Буштына</option>
+											<option>Великий Бычков</option>
+											<option>Виноградов</option>
+											<option>Вышково</option>
+											<option>Дубовое</option>
+											<option>Иршава</option>
+											<option>Королево</option>
+											<option>Межгорье</option>
+											<option>Мукачево</option>
+											<option>Перечин</option>
+											<option>Рахов</option>
+											<option>Свалява</option>
+											<option>Солотвина</option>
+											<option>Тячев</option>
+											<option>Ужгород</option>
+											<option>Хуст</option>
+											<option>Чоп</option>
+										</optgroup>
+									</select> 
+											
+											<!-- 
+							
 											<optgroup label="Ивано-Франковская обл.">
 												<option>Богородчаны</option>
 												<option>Болехов</option>
@@ -738,7 +696,7 @@
 					<div class="row">
 						<div class="cost_container col-lg-4 m-auto text-center">
 							<h2>AVERAGE SUM</h2>
-							<p class="h1">$1000,00</p>
+							<p class="h1" id='averSum'>$1000,00</p>
 						</div>
 
 						<table class="table col-lg-8 table-striped table-hover">
@@ -748,31 +706,8 @@
 									<th scope="col">COST</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>dsa</td>
-									<td>dsad</td>
-								</tr>
-								<tr>
-									<td>dsa</td>
-									<td>dsad</td>
-								</tr>
-								<tr>
-									<td>dsa</td>
-									<td>dsad</td>
-								</tr>
-								<tr>
-									<td>dsa</td>
-									<td>dsad</td>
-								</tr>
-								<tr>
-									<td>dsa</td>
-									<td>dsad</td>
-								</tr>
-								<tr>
-									<td>dsa</td>
-									<td>dsad</td>
-								</tr>
+							<tbody id="info">
+							
 							</tbody>
 						</table>
 					</div>
