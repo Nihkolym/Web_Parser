@@ -1,3 +1,242 @@
+class JSONRequireObject {
+
+	constructor(rusRegion, 
+		rusCity, 
+		buildType, 
+		rusBuyRent, 
+		floorCountMin,
+		floorCountMax,
+		floorMin,
+		floorMax, 
+		roomNumberMin,
+		roomNumberMax,
+		areaMin,
+		areaMax,
+		priceType,
+		countRequest){
+		this.location = getEnglishCity(rusRegion, rusCity);
+		this.typeBuild = getEnglishBuildType(buildType);
+	    this.buyRent = getEnglishBuyRent(rusBuyRent);
+	    this.floorCountMin = floorCountMin;
+	    this.floorCountMax = floorCountMax;
+	    this.floorMin = floorMin;
+	    this.floorMax = floorMax;
+	    this.roomNumberMin = roomNumberMin;
+	    this.roomNumberMax = roomNumberMax;
+	    this.areaMin = areaMin;
+	    this.areaMax = areaMin;
+	    this.priceType = priceType;
+	    this.countRequest = countRequest;
+	}
+
+    getEnglishRegion(rusRegion) {
+        switch (rusRegion) {
+            case "Винницкая": return "vin";
+            case "Волынская": return "vol";
+            case "Днепропетровская": return "dnp";
+            case "Донецкая": return "don";
+            case "Житомирская": return "zht";
+            case "Закарпатская": return "zak";
+            case "Запорожская": return "zap";
+            case "Ивано-Франковская": return "if";
+            case "Киевская": return "ko";
+            case "Кировоградская": return "kir";
+            case "Крым": return "cri";
+            case "Луганская": return "lug";
+            case "Львовская": return "lv";
+            case "Николаевская": return "nik";
+            case "Одесская": return "od";
+            case "Полтавская": return "pol";
+            case "Ровенская": return "rov";
+            case "Сумская": return "sum";
+            case "Тернопольская": return "ter";
+            case "Харьковская": return "kha";
+            case "Херсонская": return "khe";
+            case "Хмельницкая": return "khm";
+            case "Черкасская": return "chk";
+            case "Черниговская": return "chn";
+            case "Черновицкая": return "chv";
+        }
+
+        return "";
+    }
+
+    getEnglishCity(rusRegion, rusCity) {
+        switch (rusCity) {
+            case "Бар": return "bar";
+            case "Бершадь": return "bershad";
+            case "Винница": return "vinnitsa";
+            case "Гайсин": return "gaysin";
+            case "Гнивань": return "gnivan";
+            case "Жмерика": return "zhmerinka";
+            case "Ильинцы": return "ilintsy";
+            case "Казатин": return "kazatin";
+            case "Калиновка": return "kalinovka";
+            case "Крыжополь": return "kryzhopol";
+            case "Ладыжин": return "ladyzhin";
+            case "Липовец": return "lipovets";
+            case "Могилев-Подольский": return "mogilyev-podolskiy";
+            case "Немиров": return "nemirov";
+            case "Песочин": return "pesochin";
+            case "Погребище": return "pogrebishche";
+            case "Стрижавка": return "strizhavka";
+            case "Тульчин": return "tulchin";
+            case "Хмельник": return "khmelnik";
+            case "Чечельник": return "chechelnik";
+            case "Шаргород": return "shargorod";
+            case "Ямполь": return "yampol";
+
+            case "Берестечко": return "berestechko";
+            case "Владимир-Волынский": return "vladimir-volynskiy";
+            case "Горохов": return "gorokhov";
+            case "Иваничи": return "ivanichi";
+            case "Камень-Каширский": return "kamen-kashirskiy";
+            case "Киверцы": return "kivertsy";
+            case "Ковель": return "kovel";
+            case "Луцк": return "lutsk";
+            case "Любешов": return "lyubeshov";
+            case "Любомль": return "lyuboml";
+            case "Маневичи": return "manevichi";
+            case "Нововолынск": return "novovolynsk";
+            case "Ратно": return "ratno";
+            case "Рожище": return "rozhishche";
+            case "Старая Выжевка": return "staraya-vyzhevka";
+            case "Турийск": return "turiysk";
+            case "Устилуг": return "ustilug";
+            case "Цумань": return "tsuman";
+            case "Шацк": return "shatsk";
+
+            case "Апостолово": return "apostolovo";
+            case "Верхнеднепровск": return "verhnedneprovsk";
+            case "Вольногорск": return "volnogorsk";
+            case "Днепр": return "dnepr";
+            case "Желтые Воды": return "zhyeltye-vody";
+            case "Каменское": return "kamenskoe";
+            case "Кривой Рог": return "krivoyrog";
+            case "Марганец": return "marganets";
+            case "Никополь": return "nikopol";
+            case "Новомосковск": return "novomoskovsk";
+            case "Орджоникидзе": return "ordzhonikidze";
+            case "Павлоград": return "pavlograd";
+            case "Перещепино": return "pereshchepino";
+            case "Першотравенск": return "pershotravensk";
+            case "Подгородное": return "podgorodnoe";
+            case "Пятихатки": return "pyatikhatki";
+            case "Синельниково": return "sinelnikovo";
+            case "Терновка": return "ternovka";
+
+            case "Авдеевка": return "avdeevka";
+            case "Александровка":
+                switch (rusRegion) {
+                    case "Донецкая": return "aleksandrovka";
+                    case "Николаевская": return "aleksandrovka_665";
+                }
+            case "Амвросиевка": return "amvrosievka";
+            case "Артемовск":
+                switch (rusRegion) {
+                    case "Донецкая": return "artemovsk";
+                    case "Луганская": return "artyemovsk";
+                }
+            case "Волноваха": return "volnovakha";
+            case "Горловка": return "gorlovka";
+            case "Дебальцево": return "debaltsevo";
+            case "Дзержинск": return "dzerzhinsk";
+            case "Димитров": return "dimitrov";
+            case "Доброполье": return "dobropole";
+            case "Докучаевск": return "dokuchaevsk";
+            case "Донецк": return "donetsk";
+            case "Дружковка": return "druzhkovka";
+            case "Енакиево": return "enakievo";
+            case "Ждановка": return "zhdanovka";
+            case "Зугрэс": return "zugres";
+            case "Кировское": return "kirovskoe";
+            case "Константиновка": return "konstantinovka";
+
+            case "Андрушевка": return "andrushevka";
+            case "Барановка": return "baranovka_20143";
+            case "Бердичев": return "berdichev";
+            case "Володарск-Волынский": return "volodarsk-volynskiy";
+            case "Емильчино": return "yemilchino";
+            case "Житомир": return "zhitomir";
+            case "Иршанск": return "irshansk";
+            case "Коростень": return "korosten";
+            case "Коростышев": return "korostyshev";
+            case "Малин": return "malin";
+            case "Новоград-Волынский": return "novograd-volynskiy";
+            case "Овруч": return "ovruch";
+            case "Олевск": return "olevsk";
+            case "Попельня": return "popelnya";
+            case "Радомышль": return "radomyshl";
+            case "Романов": return "romanov";
+            case "Черняхов": return "chernyahov";
+
+            case "Берегово": return "beregovo";
+            case "Буштына": return "bushtyna";
+            case "Великий Бычков": return "velikiy-bychkov";
+            case "Виноградов": return "vinogradov";
+
+			case "Десна": return "desna";
+            case "Ичня": return "ichnya";
+            case "Козелец": return "kozelets";
+            case "Корюковка": return "koryukovka";
+            case "Мена": return "mena";
+            case "Нежин": return "nezhin";
+            case "Новгород-Северский": return "novgorod-severskiy";
+            case "Носовка": return "nosovka";
+            case "Прилуки": return "priluki";
+            case "Седнев": return "sednev";
+            case "Семеновка": return "semyenovka";
+            case "Чернигов": return "chernigov";
+            case "Щорс": return "schors";
+
+            case "Берегомет": return "beregomet";
+            case "Вашковцы": return "vashkovtsy";
+            case "Вижница": return "vizhnitsa";
+            case "Герца": return "gertsa";
+            case "Глыбокая": return "glybokaya";
+            case "Заставна": return "zastavna";
+            case "Кельменцы": return "kelmentsy";
+            case "Кицмань": return "kitsman";
+            case "Красноильск": return "krasnoilsk";
+            case "Новоднестровск": return "novodnestrovsk";
+            case "Новоселица": return "novoselitsa";
+            case "Путила": return "putila";
+            case "Сокиряны": return "sokiryany";
+            case "Сторожинец": return "storozhinets";
+            case "Хотин": return "khotin";
+            case "Черновцы": return "chernovtsy";
+        }
+
+        return "";
+    }
+
+    getEnglishBuildType(rusBuildType) {
+        switch (rusBuildType.toLowerCase()) {
+            case "дом":
+                return "house";
+            case "квартира":
+                return "apartment";
+        }
+
+        return "";
+    }
+
+    getEnglishBuyRent(rusBuyRent) {
+        switch (rusBuyRent.toLowerCase()) {
+            case "покупка":
+                return "buy";
+            case "аренда":
+                return "rent";
+        }
+
+        return "";
+    }
+
+   
+}
+
+
+
 let captions = document.getElementsByClassName("caption");
 let logos = document.getElementsByClassName("resLogo");
 let descriptions = document.getElementsByClassName("description");
@@ -5,20 +244,22 @@ let descriptions = document.getElementsByClassName("description");
 document.getElementById('getData').onclick = function (e) {
 	var elements = document.forms[0];
 
-	let obj = {
+	let obj = new JSONRequireObject(
+		elements.area.value,
+		elements.city.value,
 		building: elements.building.value,
-		operation: elements.operation.value,
-		area: elements.area.value,
-		city: elements.city.value,
+		operation: elements.operation.value,	
 		floor1: elements.floor1.value,
 		floor2: elements.floor2.value,
 		floor3: elements.floor3.value,
 		floor4: elements.floor4.value,
+		numberOfRoom1: elements['numberOfRoom1'].value,
+		numberOfRoom2: elements['numberOfRoom2'].value,
 		areaSize1: elements['area-size1'].value,
 		areaSize2: elements['area-size2'].value,
-		numberOfRoom1: elements['numberOfRoom1'].value,
-		numberOfRoom2: elements['numberOfRoom2'].value
-	}
+		"USD",
+		accuracy.value
+	);
 
 	var xhr = (window.XMLHttpRequest)? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
@@ -64,6 +305,10 @@ document.getElementById('getData').onclick = function (e) {
 				tr.innerHTML = "<td>"+elements[i].URL +"</td><td>" + elements[i].price + "</td>";
 				info.appendChild(tr);
 			}
+
+			var itemscont = document.getElementById('itemscont');
+
+
 		}
 	};
 
