@@ -9,6 +9,13 @@ for(var i = 0; i < icons.length; i++){
 		var end = this.outerHTML.search(pattern2);
 		var str = this.outerHTML.substring(start, end);
 
-		btn.innerHTML = str;
+		var c = document.querySelector('.current');
+
+		c.classList.add('no-current');
+		c.classList.remove('current');
+
+		this.children[0].classList.add('current');
+
+		
 	})
 }

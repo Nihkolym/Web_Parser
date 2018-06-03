@@ -24,7 +24,7 @@ class JSONRequireObject {
 	    this.roomNumberMin = roomNumberMin;
 	    this.roomNumberMax = roomNumberMax;
 	    this.areaMin = areaMin;
-	    this.areaMax = areaMin;
+	    this.areaMax = areaMax;
 	    this.priceType = priceType;
 	    this.countRequest = countRequest;
 	}
@@ -258,7 +258,7 @@ document.getElementById('getData').onclick = function (e) {
 		elements['area-size1'].value,
 		elements['area-size2'].value,
 		"USD",
-		accuracy.value
+		document.getElementById(accuracy.value)
 	);
 
 	var xhr = (window.XMLHttpRequest)? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
@@ -301,8 +301,8 @@ document.getElementById('getData').onclick = function (e) {
 			var info = document.getElementById('info');
 
 			for(var i = 0; i < elements.length; i++){
-				var tr = new document.createElement('tr');
-				tr.innerHTML = "<td>"+elements[i].URL +"</td><td>" + elements[i].price + "</td>";
+				var tr = document.createElement('tr');
+				tr.innerHTML = "<td><a href='"+elements[i].URL +"'></a></td><td>" + elements[i].price + "</td>";
 				info.appendChild(tr);
 			}
 

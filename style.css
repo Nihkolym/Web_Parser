@@ -39,6 +39,20 @@ optgroup:not([label="Винницкая область"]){
 	}
 }
 
+.no-current{
+	color: white;	
+}
+
+.current{
+	color: green;
+}
+
+.description{
+	height: 100px;
+	text-align: left;
+	overflow-y: hidden;
+}
+
 #main{
 	padding: 0;
 	background-color: hsla(0, 0%, 70%, 0.4);
@@ -91,6 +105,11 @@ h1{
 }
 h2{
 	font-style: italic;
+}
+
+.grivna{
+	font-weight: bold;
+	cursor: default;
 }
 
 .cost{
