@@ -1,6 +1,12 @@
 
+#main{
+	padding-top: 100px;
+}
+
 .slider{
 	background-color: #F8F7F7;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .slider_content{
@@ -15,7 +21,6 @@
 
 .slider_content>.content_current > img{
 	width: 100%;
-	height: 769px;
 }
 
 .slider_content>.content_current{
@@ -44,7 +49,7 @@
 }
 
 .current_dote{
-	background-color: #FF4545;
+	background-color: green;
 }
 
 .slider_btn{

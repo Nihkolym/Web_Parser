@@ -243,7 +243,8 @@ let descriptions = document.getElementsByClassName("description");
 
 document.getElementById('getData').onclick = function (e) {
 	var elements = document.forms[0];
-
+    document.getElementById('wait').className = "wait";
+    document.getElementById('body').className = "open";
 	let obj = new JSONRequireObject(
 		elements.area.value,
 		elements.city.value,
@@ -308,7 +309,8 @@ document.getElementById('getData').onclick = function (e) {
 
 			var itemscont = document.getElementById('itemscont');
 
-
+             document.getElementById('wait').className = "";
+             document.getElementById('body').className = "";
 		}
 	};
 
